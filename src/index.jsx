@@ -1,6 +1,8 @@
 /* @refresh reload */
+console.log("salam");
 import App from "./App";
 import { render } from "solid-js/web";
+
 // import "./index.css";
 // const root = document.getElementById("root");
 

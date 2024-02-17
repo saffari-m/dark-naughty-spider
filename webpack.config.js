@@ -4,7 +4,8 @@ const { merge } = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const commonConfigs = {
-  entry: "./src/index.jsx",
+  // entry: { polyfill: "./src/pollyfill.js", index: "./src/index.jsx" },
+  entry: { main: ["./src/pollyfill.js", "./src/index.jsx"] },
 
   plugins: [new HtmlWebpackPlugin({ template: "./index.html" })],
   resolve: {
@@ -21,7 +22,6 @@ const commonConfigs = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: [path.resolve(__dirname, "node_modules")],
         loader: "babel-loader",
         options: {
           babelrc: false,
@@ -36,7 +36,7 @@ const commonConfigs = {
             ],
             "solid",
           ],
-          plugins: ["@babel/plugin-transform-arrow-functions"],
+          plugins: [],
         },
       },
       {
@@ -50,38 +50,37 @@ const commonConfigs = {
     ],
   },
 
-  // optimization: {
-  //   minimize: true,
-  //   minimizer: [
-  //     new TerserPlugin({
-  //       terserOptions: {
-  //         compress: { arrows: false },
-  //         ecma: 5,
-  //         module: true,
-  //       },
-  //     }),
-  //   ],
-  //   splitChunks: false,
-  //   usedExports: false,
-  // },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: { arrows: false },
+          ecma: 5,
+          module: true,
+        },
+      }),
+    ],
+    splitChunks: false,
+    usedExports: false,
+  },
 };
 
 const devConfig = {
   name: "devConfig",
-  mode: "development",
+  mode: "production",
 
   output: {
-    filename: "SolidJsPractice.js",
-    chunkFilename: "SolidJsPractice.[contenthash].js",
-    sourceMapFilename: "SolidJsPractice.[contenthash].js.map",
+    filename: "[name].SolidJsPractice.js",
     path: path.resolve(__dirname, "dist"),
     library: "SolidJsPractice",
     libraryTarget: "umd",
     libraryExport: "default",
     clean: true,
-    globalObject: "this",
   },
-  devtool: "source-map",
+
+  devtool: false,
+
   devServer: {
     open: false,
     allowedHosts: "all",
