@@ -8,7 +8,7 @@
 
 export default function App() {
   return (
-    <div>salam</div>
+    <div>salam chetori</div>
     // <Router root={Layout}>
     //   <Route path="/" component={Home} />
     //   {/* <Route path="/about" component={About} /> */}

@@ -4,21 +4,8 @@ const { merge } = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const commonConfigs = {
-  mode: "development",
   entry: "./src/index.jsx",
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        terserOptions: {
-          ecma: 5,
-          module: true,
-        },
-      }),
-    ],
-    splitChunks: false,
-    usedExports: false,
-  },
+
   plugins: [new HtmlWebpackPlugin({ template: "./index.html" })],
   resolve: {
     alias: {
@@ -26,15 +13,14 @@ const commonConfigs = {
     },
     extensions: [".jsx", ".js"],
   },
-  performance: {
-    maxEntrypointSize: 2000000, // 2MB
-    maxAssetSize: 2000000, // 2MB
-  },
+
+  target: ["web", "es5"],
   module: {
     strictExportPresence: true,
+
     rules: [
       {
-        test: /\.(js)x$/,
+        test: /\.(js|jsx)$/,
         exclude: [path.resolve(__dirname, "node_modules")],
         loader: "babel-loader",
         options: {
@@ -45,23 +31,12 @@ const commonConfigs = {
               {
                 loose: true,
                 modules: false,
-                targets: {
-                  chrome: "32",
-                  firefox: "40",
-                  edge: "16",
-                  // browsers: [
-                  //   "chrome >= 32",
-                  //   "firefox >= 32",
-                  //   "safari >= 8",
-                  //   "ios >= 8",
-                  //   "android >= 4",
-                  // ],
-                },
+                targets: ">0.1%",
               },
             ],
             "solid",
           ],
-          plugins: [],
+          plugins: ["@babel/plugin-transform-arrow-functions"],
         },
       },
       {
@@ -74,6 +49,21 @@ const commonConfigs = {
       },
     ],
   },
+
+  // optimization: {
+  //   minimize: true,
+  //   minimizer: [
+  //     new TerserPlugin({
+  //       terserOptions: {
+  //         compress: { arrows: false },
+  //         ecma: 5,
+  //         module: true,
+  //       },
+  //     }),
+  //   ],
+  //   splitChunks: false,
+  //   usedExports: false,
+  // },
 };
 
 const devConfig = {
@@ -89,7 +79,7 @@ const devConfig = {
     libraryTarget: "umd",
     libraryExport: "default",
     clean: true,
-    globalObject: "this", // https://github.com/webpack/webpack/issues/6642#issuecomment-370222543
+    globalObject: "this",
   },
   devtool: "source-map",
   devServer: {
