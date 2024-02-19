@@ -6,7 +6,6 @@ const babelLoaderRule = common.module.rules.filter(
 )[0];
 babelLoaderRule.exclude = /node_modules/;
 babelLoaderRule.options.babelrc = true;
-
 const devConfigs = {
   name: "WebTVDevConfigs",
   mode: "development",

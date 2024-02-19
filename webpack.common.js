@@ -23,7 +23,9 @@ module.exports = {
 
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@components": path.resolve(__dirname, "src/components"),
+      "@src": path.resolve(__dirname, "src"),
+      "@public": path.resolve(__dirname, "public"),
     },
     extensions: [".jsx", ".js"],
   },
@@ -56,13 +58,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          {
-            loader: "postcss-loader",
-          },
-        ],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
         // use: ["style-loader", "css-loader"],
       },
     ],
