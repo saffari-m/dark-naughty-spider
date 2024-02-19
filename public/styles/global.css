@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "YekanBakh";
+  src: url("../font/Yekan-Bakh-En-Medium.woff") format("woff");
+}
+
+*,
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "YekanBakh", sans-serif;
+  color: #333;
+  background-color: #fff;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
