@@ -20,6 +20,7 @@ module.exports = {
   },
 
   plugins: config.plugins,
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -29,11 +30,9 @@ module.exports = {
 
   module: {
     strictExportPresence: true,
-
     rules: [
       {
         test: /\.(js|jsx)$/,
-
         loader: "babel-loader",
         options: {
           babelrc: false,
