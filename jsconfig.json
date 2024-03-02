@@ -1,6 +1,13 @@
 {
   "compilerOptions": {
-    "baseUrl": "src"
+    "baseUrl": ".",
+    "target": "ES5",
+    "jsx": "react",
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@public/*": ["./public/*"]
+    }
   },
-  "include": ["src"]
+
+  "exclude": ["node_modules", "dist"]
 }

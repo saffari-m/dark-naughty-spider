@@ -1,10 +1,14 @@
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
+
+const babelLoaderRule = common.module.rules.filter(
+  (rule) => rule.loader === "babel-loader"
+)[0];
+babelLoaderRule.exclude = /node_modules/;
+babelLoaderRule.options.babelrc = true;
 const devConfigs = {
   name: "WebTVDevConfigs",
   mode: "development",
-
-  devtool: "inline-source-map",
   devServer: {
     open: false,
     allowedHosts: "all",
@@ -13,6 +17,6 @@ const devConfigs = {
     hot: true,
   },
 };
-const mergedConfigs = merge(common, devConfigs);
 
+const mergedConfigs = merge(common, devConfigs);
 module.exports = mergedConfigs;

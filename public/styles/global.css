@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "YekanBakh";
   src: url("../font/Yekan-Bakh-En-Medium.woff") format("woff");
