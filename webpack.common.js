@@ -18,9 +18,7 @@ module.exports = {
     libraryExport: "default",
     clean: true,
   },
-
   plugins: config.plugins,
-
   resolve: {
     alias: {
       "@components": path.resolve(__dirname, "src/components"),

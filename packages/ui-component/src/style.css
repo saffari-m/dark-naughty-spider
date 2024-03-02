@@ -1,0 +1,7 @@
+@import "tailwindcss/base";
+
+/* components.css */
+@import "tailwindcss/components";
+@import "./components/button/Button.style.css";
+
+@import "tailwindcss/utilities";

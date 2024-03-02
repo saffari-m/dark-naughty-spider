@@ -1,0 +1,3 @@
+.btn {
+  @apply relative inline-block cursor-pointer touch-manipulation select-none whitespace-nowrap border border-solid border-transparent bg-none text-center font-medium leading-tight transition-all;
+}
