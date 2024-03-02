@@ -13,6 +13,7 @@ module.exports = {
   output: {
     filename: "[name].WebTV.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
     library: "WebTV",
     libraryTarget: "umd",
     libraryExport: "default",
