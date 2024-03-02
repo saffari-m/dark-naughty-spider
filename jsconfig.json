@@ -5,6 +5,8 @@
     "jsx": "react",
     "paths": {
       "@components/*": ["./src/components/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@routes/*": ["./src/routes/*"],
       "@public/*": ["./public/*"]
     }
   },

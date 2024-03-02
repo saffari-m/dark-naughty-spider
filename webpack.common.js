@@ -24,8 +24,10 @@ module.exports = {
 
   resolve: {
     alias: {
-      "@components": path.resolve(__dirname, "src/components"),
       "@src": path.resolve(__dirname, "src"),
+      "@components": path.resolve(__dirname, "src/components"),
+      "@routes": path.resolve(__dirname, "src/routes"),
+      "@pages": path.resolve(__dirname, "src/pages"),
       "@public": path.resolve(__dirname, "public"),
     },
     extensions: [".jsx", ".js"],
