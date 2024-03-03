@@ -38,7 +38,8 @@
     "terser-webpack-plugin": "^5.3.10",
     "webpack": "^5.90.2",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.2"
+    "webpack-dev-server": "^5.0.2",
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
     "lerna": "^8.1.2",

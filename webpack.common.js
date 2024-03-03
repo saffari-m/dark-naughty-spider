@@ -29,6 +29,7 @@ module.exports = {
       "@routes": path.resolve(__dirname, "src/routes"),
       "@utils": path.resolve(__dirname, "src/utils"),
       "@pages": path.resolve(__dirname, "src/pages"),
+      "@store": path.resolve(__dirname, "src/store"),
       "@public": path.resolve(__dirname, "public"),
     },
     extensions: [".jsx", ".js"],
