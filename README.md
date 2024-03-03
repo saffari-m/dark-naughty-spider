@@ -2,8 +2,8 @@
 
 This repo contains these packages:
 
+- `ui-component` (Ui-component library which is using React and Vite)
 - `webtv` (Webtv library which is using React)
-- `webtv` (Ui-component library which is using React and Vite)
 
 ```
 packages/
