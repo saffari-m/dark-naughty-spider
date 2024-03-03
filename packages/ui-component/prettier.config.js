@@ -1,4 +1,4 @@
 module.exports = {
-    tailwindAttributes: ['class'],
-    tailwindFunctions: ['cls'],
-  }
+  tailwindAttributes: ["class"],
+  tailwindFunctions: ["cls"],
+};
