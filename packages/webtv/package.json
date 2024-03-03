@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack serve --mode development --port 4400 --config webpack.dev.js",
     "serve": "webpack serve --port 4400 --config webpack.prod.js",
-    "build": "npm run build:dev",
+    "build": "npm run build:prod",
     "build:dev": "npm run remdist && webpack --config webpack.dev.js",
     "build:prod": "npm run remdist && webpack --config webpack.prod.js",
     "remdist": "rimraf dist"

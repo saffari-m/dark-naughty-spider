@@ -2,7 +2,8 @@
   "name": "root",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "packages/webtv"
   ],
   "devDependencies": {
     "lerna": "^7.1.5"
@@ -12,21 +13,40 @@
   },
   "nx": {
     "namedInputs": {
-      "default": ["{projectRoot}/**/*"],
-      "production": ["!{projectRoot}/**/*.spec.tsx"]
+      "default": [
+        "{projectRoot}/**/*"
+      ],
+      "production": [
+        "!{projectRoot}/**/*.spec.tsx"
+      ]
     },
     "targets": {
       "build": {
-        "inputs": ["production", "^production"],
-        "outputs": ["{workspaceRoot}/dist/libs/mylib"],
-        "dependsOn": ["^build"]
+        "inputs": [
+          "production",
+          "^production"
+        ],
+        "outputs": [
+          "{workspaceRoot}/dist/libs/mylib"
+        ],
+        "dependsOn": [
+          "^build"
+        ]
       },
       "test": {
-        "inputs": ["default", "^production"],
+        "inputs": [
+          "default",
+          "^production"
+        ],
         "outputs": [],
-        "dependsOn": ["build"]
+        "dependsOn": [
+          "build"
+        ]
       }
     },
-    "includedScripts": ["test", "build"] 
+    "includedScripts": [
+      "test",
+      "build"
+    ]
   }
 }
