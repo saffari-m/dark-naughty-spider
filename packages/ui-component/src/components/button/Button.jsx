@@ -3,130 +3,35 @@ import { cva } from "cva";
 import PropTypes from "prop-types";
 import cls from "classnames";
 
-const buttonClassname = cva(["btn"], {
+const buttonClassname = cva("btn", {
   variants: {
-    intent: {
-      primary: [
-        "bg-blue-500",
-        "text-white",
-        "border-transparent",
-        "hover:bg-blue-600",
-      ],
-      // **or**
-      // primary: "bg-blue-500 text-white border-transparent hover:bg-blue-600",
-      secondary: [
-        "bg-white",
-        "text-gray-800",
-        "border-gray-400",
-        "hover:bg-gray-100",
-      ],
+    type: {
+      default: "rounded-2xs bg-surface-secondary-high text-icon-extra hover:bg-inverted focus:outline focus:outline-1 focus:-outline-offset-1 focus:outline-border-focus",
     },
+    shape: "",
     size: {
-      small: ["text-sm", "py-1", "px-2"],
-      medium: ["text-base", "py-2", "px-4"],
+      medium: "t-label-large p-3",
     },
   },
   compoundVariants: [
     {
-      intent: "primary",
+      type: "default",
       size: "medium",
-      class: "uppercase",
-      // **or** if you're a React.js user, `className` may feel more consistent:
-      // className: "uppercase"
+      className: "",
     },
   ],
   defaultVariants: {
-    intent: "primary",
+    type: "default",
     size: "medium",
   },
 });
 
-// import { cx } from "@linaria/core";
-// import LoadingIcon from "./LoadingIcon";
-
-// import {
-//   CButtonContent,
-//   CButton,
-//   CButtonDefault,
-//   CButtonPrimary,
-//   CButtonText,
-//   CButtonLink,
-//   CButtonMiddle,
-//   CButtonLarge,
-//   CButtonSmall,
-//   CButtonCircle,
-//   CButtonCircleMiddle,
-//   CButtonCircleLarge,
-//   CButtonCircleSmall,
-//   CButtonRoundMiddle,
-//   CButtonRoundLarge,
-//   CButtonRoundSmall,
-//   CButtonBlock,
-//   CButtonGhost,
-//   CButtonGhostPrimary,
-//   CButtonGhostDefault,
-//   CButtonIcon,
-//   CButtonIconRound,
-//   CButtonIconMiddle,
-//   CButtonIconLarge,
-//   CButtonIconSmall,
-//   CButtonDisabled,
-//   CButtonDisabledAll,
-//   CButtonDisabledOutline,
-//   CButtonDisabledAllGhosted,
-// } from "./ButtonStyle";
-
-// const getStyleClassname = ({
-//   type,
-//   shape,
-//   size,
-//   block,
-//   ghost,
-//   disabled,
-//   iconOnly,
-// }) => {
-//   return cls(CButton, {
-//     [CButtonDefault]: type === "default",
-//     [CButtonPrimary]: type === "primary",
-//     [CButtonText]: type === "text",
-//     [CButtonLink]: type === "link",
-
-//     [CButtonMiddle]: size === "default",
-//     [CButtonLarge]: size === "large",
-//     [CButtonSmall]: size === "small",
-
-//     [CButtonCircle]: shape === "circle",
-//     [CButtonCircleMiddle]: shape === "circle" && size === "default",
-//     [CButtonCircleLarge]: shape === "circle" && size === "large",
-//     [CButtonCircleSmall]: shape === "circle" && size === "small",
-//     [CButtonRoundMiddle]: shape === "round" && size === "default",
-//     [CButtonRoundLarge]: shape === "round" && size === "large",
-//     [CButtonRoundSmall]: shape === "round" && size === "small",
-
-//     [CButtonBlock]: block,
-//     [CButtonGhost]: ghost,
-//     [CButtonGhostDefault]: ghost && type === "default",
-//     [CButtonGhostPrimary]: ghost && type === "primary",
-
-//     [CButtonIcon]: iconOnly,
-//     [CButtonIconRound]: iconOnly && shape === "round",
-//     [CButtonIconMiddle]: iconOnly && size === "default",
-//     [CButtonIconLarge]: iconOnly && size === "large",
-//     [CButtonIconSmall]: iconOnly && size === "small",
-
-//     [CButtonDisabled]: disabled,
-//     [CButtonDisabledAll]: disabled && (type === "primary" || type === "default"),
-//     [CButtonDisabledOutline]: disabled && (type === "text" || type === "link"),
-//     [CButtonDisabledAllGhosted]: disabled && ghost ,
-//   });
-// };
-
 function Button(props) {
   const {
     loading = false,
-    type = "default",
-    shape = "default",
-    size = "default",
+    type,
+    shape,
+    size,
     disabled,
     children,
     className,
@@ -225,7 +130,7 @@ Button.propTypes = {
   className: PropTypes.string,
   htmlType: PropTypes.oneOf(["submit", "button", "reset"]),
   type: PropTypes.oneOf(["default", "primary", "link", "text"]),
-  size: PropTypes.oneOf(["default", "large", "small"]),
+  size: PropTypes.oneOf(["large", "medium", "small"]),
   shape: PropTypes.oneOf(["default", "circle", "round"]),
   icon: PropTypes.node,
   suffix: PropTypes.node,

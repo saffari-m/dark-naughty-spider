@@ -5,3 +5,91 @@
 @import "./components/button/Button.style.css";
 
 @import "tailwindcss/utilities";
+
+
+/* ------------------------
+ 	Typography Classes
+--------------------------*/
+.typography {
+    @apply tracking-[-1px];
+}
+
+/* display */
+.t-display-large {
+    @apply font-extrabold text-[2.75rem] leading-[64px];
+}
+
+.t-display-medium {
+    @apply font-bold text-[2rem] leading-[48px];
+}
+
+/* heading */
+.t-heading-x-large {
+    @apply font-bold text-[1.375rem] leading-[32px];
+}
+
+.t-heading-large {
+    @apply font-medium text-xl leading-7;
+}
+
+.t-heading-medium-s {
+    @apply font-bold text-base leading-6;
+}
+
+.t-heading-medium {
+    @apply font-medium text-base leading-6;
+}
+
+.t-heading-small-s {
+    @apply font-bold text-sm leading-6;
+}
+
+.t-heading-small {
+    @apply font-medium text-sm leading-6;
+}
+
+/* label */
+.t-label-large-s {
+    @apply font-bold text-sm leading-6;
+}
+
+.t-label-large {
+    @apply font-medium text-sm leading-6;
+}
+
+.t-label-medium-s {
+    @apply font-bold text-xs leading-4
+}
+
+.t-label-medium {
+    @apply font-medium text-xs leading-4;
+}
+
+.t-label-small {
+    @apply font-medium text-[0.6875rem] leading-4;
+}
+
+/* paragraph */
+.t-paragraph-large-s {
+    @apply font-bold text-sm leading-7;
+}
+
+.t-paragraph-large {
+    @apply font-medium text-sm leading-7;
+}
+
+.t-paragraph-medium-s {
+    @apply font-bold text-[0.8125rem] leading-6;
+}
+
+.t-paragraph-medium {
+    @apply font-medium text-[0.8125rem] leading-6;
+}
+
+.t-paragraph-small-s {
+    @apply font-bold text-xs leading-6;
+}
+
+.t-paragraph-small {
+    @apply font-medium text-xs leading-6;
+}
