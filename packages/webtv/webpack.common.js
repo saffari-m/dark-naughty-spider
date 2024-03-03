@@ -19,9 +19,7 @@ module.exports = {
     libraryExport: "default",
     clean: true,
   },
-
   plugins: config.plugins,
-
   resolve: {
     alias: {
       "@src": path.resolve(__dirname, "src"),
