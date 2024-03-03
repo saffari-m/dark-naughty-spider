@@ -3,6 +3,15 @@ import React from "react";
 import Button from "@components/button";
 import Typography from "@components/typography";
 
+const Color = ({ className, ...props }) => (
+  <div
+    className={
+      "flex h-32 w-32 items-center justify-center rounded border border-border-ultra text-center " +
+      className
+    }
+    {...props}
+  />
+);
 //TODO: some how we should extract this component tailwind styles from final bundle.
 function App() {
   return (
@@ -78,6 +87,32 @@ function App() {
         <Typography type="paragraph" size="s" bold>
           تلوبیون: مرجع پخش زنده و دانلود فیلم
         </Typography>
+
+        <h2 className="mb-4">Colors</h2>
+        <div className="flex gap-2">
+          <Color className="bg-primary">bg-primary</Color>
+          <Color className="bg-secondary">bg-secondary</Color>
+          <Color className="bg-tertiary">bg-tertiary</Color>
+          <Color className="bg-inverted text-black">bg-inverted</Color>
+        </div>
+
+        <div className="flex gap-2">
+          <Color className="bg-surface-primary-low text-black">bg-surface-primary-low</Color>
+          <Color className="bg-surface-primary-medium text-black">bg-surface-primary-medium</Color>
+          <Color className="bg-surface-primary-high text-black"> bg-surface-primary-high </Color>
+          <Color className="bg-surface-primary-extra text-black"> bg-surface-primary-extra </Color>
+          <Color className="bg-surface-primary-ultra text-black"> bg-surface-primary-ultra </Color>
+        </div>
+
+        <div className="flex gap-2">
+          <Color className="bg-surface-accent-low text-black">bg-surface-accent-low</Color>
+          <Color className="bg-surface-accent-medium">bg-surface-accent-medium</Color>
+          <Color className="bg-surface-accent-high"> bg-surface-accent-high </Color>
+          <Color className="bg-surface-accent-extra"> bg-surface-accent-extra </Color>
+          <Color className="bg-surface-accent-ultra"> bg-surface-accent-ultra </Color>
+        </div>
+
+        and more...
       </div>
     </div>
   );
